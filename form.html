@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Form</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #000;
+            padding: 5px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Order Form</h1>
+
+    <form id="orderForm">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" ="name" required><br><br>
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+    <label for="address">Address:</label>
+    
+    <br>
+    <textarea id="address" name="address" rows="3" required></textarea>
+    <br>
+    
+    <br>
+        <label for="postcode">Postcode:</label><br>
+        <input type="text" id="postcode" name="postcode" required>
+    <br>
+     
+    <br>
+
+        <h2>Product Details</h2>
+        <table>
+        <tr>
+        <th>Product</th>
+        <th>Part Number</th>
+        <th>Quantity</th>
+        <th>Unit Price</th>
+        <th>Subtotal</th>
+            </tr
+            
+        <tr>
+        <td>Econo Box</td>
+        <td>LB100</td>
+        <td><input type="number" id="qty1" name="qty1" min="0" value="0" onchange="updateTotal()"></td>
+        <td>R5</td>
+        <td id="subtotal1">R0</td>
+            </tr>
+            
+        <tr>
+        <td>Standard Box</td>
+        <td>LB200</td>
+        <td><input type="number" id="qty2" name="qty2" min="0" value="0" onchange="updateTotal()"></td>
+        <td>R10</td>
+        <td id="subtotal2">R0</td>
+            </tr>
+            
+        <tr>
+        <td>Premium Box</td>
+        <td>LB300</td>
+        <td><input type="number" id="qty3" name="qty3" min="0" value="0" onchange="updateTotal()"></td>
+        
+        <td>R15</td>
+        <td id="subtotal3">R0</td>
+            </tr
+ 
+        <tr>
+        <td>Deluxe Box</td>
+        <td>LB400</td>
+        <td><input type="number" id="qty4" name="qty4" min="0" value="0" onchange="updateTotal()"></td>
+        <td>R20</td>
+        <td id="subtotal4">R0</td>
+        
+        </tr>
+            
+        <tr>
+        <td>Super Deluxe Box</td>
+        <td>LB500</td>
+        <td><input type="number" id="qty5" name="qty5" min="0" value="0" onchange="updateTotal()"></td>
+        <td>R30</td>
+        <td id="subtotal5">R0</td>
+        </tr>
+     
+        <tr>
+        <td colspan="4" style="text-align:right;"><strong>Total:</strong></td>
+        <td id="totalPrice">R0</td>
+        
+        </tr>
+           
+        </table>
+
+        <h2>Credit Card Details</h2>
+        <label for="cardType">Card Type:</label><br>
+        <input type="radio" id="mastercard" name="cardType" value="Mastercard" required> Mastercard<br>
+        <input type="radio" id="visa" name="cardType" value="Visa"> Visa<br>
+        <input type="radio" id="amex" name="cardType" value="American Express"> American Express<br>
+        <input type="radio" id="diners" name="cardType" value="Diners Club"> Diners Club<br><br>
+
+        <label for="cardNumber">Card Number:</label><br>
+        <input type="text" id="cardNumber" name="cardNumber" required><br><br>
+
+        <label for="expiryDate">Expiry Date:</label><br>
+        <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" required><br><br>
+
+        <h2>Delivery Address</h2>
+        <textarea id="deliveryAddress" name="deliveryAddress" rows="3" required></textarea><br><br>
+
+        <input type="submit" value="Send Order">
+        <input type="reset" value="Clear Form" onclick="resetTotals()">
+    </form>
+</body>
+</html>
+
